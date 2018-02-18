@@ -9,7 +9,7 @@ let dataArray = []
 export class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {triggers: [], nextIdx: 0};
+    this.state = {triggers: [], nextIdx: 0, count: 0};
   }
 
   handleMicClick(event) {
@@ -18,10 +18,12 @@ export class App extends Component {
       time: new Date(),
       body: "lorem ipsum",
       id: this.state.nextIdx,
+      flagged: isFlagged("", this.state.count)
     });
     this.setState({
       triggers: this.state.triggers,
       nextIdx: this.state.nextIdx + 1,
+      count: this.state.count + 1
     });
   }
 
@@ -32,9 +34,9 @@ export class App extends Component {
         <Jumbotron title="S.E.F." subTitle="Social Engineer Firewall" onClick={this.handleMicClick.bind(this)}/>
         
         <div class="container">
-          {_.orderBy(this.state.triggers, 'id')
+          {_.orderBy(this.state.triggers, 'id').reverse()
             .map(trigger =>
-              <TextLine title={trigger.title} time={trigger.time} body={trigger.body} key={trigger.id} />
+              <TextLine title={trigger.title} time={trigger.time} body={trigger.body} flagged={trigger.flagged} key={trigger.id} />
            )}
         </div>
       </div>
@@ -46,6 +48,7 @@ export class TextLine extends React.Component {
   render() {
     return (
       <div class="text-line">
+        <div class={this.props.flagged}>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -58,6 +61,7 @@ export class TextLine extends React.Component {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     );
@@ -85,6 +89,13 @@ export class Jumbotron extends React.Component {
 function test() {
   console.log("printtt");
   ReactDOM.render(<h1>test</h1>, document.getElementById("root"))
+}
+
+function isFlagged(text, count) {
+  // API Call
+  var classification = count % 2 == 0 ? "flagged" : "not-flagged";
+  console.log(classification);
+  return classification
 }
 
 function formatDate(date) {
