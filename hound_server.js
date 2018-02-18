@@ -3,7 +3,7 @@ var fs = require('fs');
 var https = require('https');
 var path = require('path');
 var bodyParser = require('body-parser');
-
+var request = require('request');
 var Houndify = require('houndify');
 
 
@@ -51,7 +51,46 @@ if (config.https) {
 
   app.post('/responseGetter', function(req, res) {
     console.log(req.body);
+    var og_quer = req.body.Disambiguation.ChoiceData[0].FixedTranscription;
     
+    if(og_quer.search(/smash/gi) >= 0) {
+            // Set the headers
+      var headers = {
+        'Content-Type':     'application/json'
+      }
+
+      // Configure the request
+      var options = {
+        url: 'http://ogabay.stdlib.com/smash-service@dev/',
+        method: 'POST',
+        headers: headers,
+        qs: {
+          "sender": "18189328759",
+          "receiver": "13615023120",
+          "message": og_quer,
+          "createdDatetime": "2018-02-01"
+        }
+      }
+
+      // Start the request
+      request(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            // Print out the response body
+            console.log(body)
+        } else {
+          console.log(response);
+        }
+      })
+    }
+    else {
+      var patt = /(maiden\sname)|(first\spet)|(favorite\steacher)|(first\sschool)|(first\sjob)|(first\scar)|(favorite\sbook)|(favorite\sfood)|(\bcity\W+(?:\w+\W+)*?born\b)|(\bcity\W+(?:\w+\W+)*?birth\b)|(first\steacher)|(\bchildhood\W+(?:\w+\W+)*?friend\b)|(\bmeet\W+(?:\w+\W+)*?spouse\b)|(mascot)/gi;
+      var res = patt.exec(og_quer);
+      if(res == null) {
+        // return false and empty string
+      } else {
+        // return true and the trigger word
+      }
+    }
     res.sendStatus(200);
   })
 

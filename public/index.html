@@ -174,7 +174,7 @@
           //Partial transcript, response and error handlers
           onTranscriptionUpdate: onTranscriptionUpdate,
           onResponse: function(response, info) {
-            //recorder.stop();
+            recorder.stop();
             onResponse(response, info);
           },
           onError: function(err, info) {
