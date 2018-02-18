@@ -13,7 +13,3 @@ function checkText() {
     }
    
 }
-
-// $("#responseJSON").change(function() {
-//     checkText();
-// });
