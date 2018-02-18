@@ -1,0 +1,12 @@
+{
+  
+  "clientId": "Insert your Client ID here",
+  "clientKey": "Insert your Client Key here",
+  
+  "port": 3446,
+
+  "https": false,
+  "sslKeyFile": "server.key",
+  "sslCrtFile": "server.crt"  
+
+}
