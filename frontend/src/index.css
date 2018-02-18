@@ -29,3 +29,11 @@ body {
 .card {
   /* background-color: none; */
 }
+
+.not-flagged {
+  border: 3px solid #64B5F6;
+}
+
+.flagged {
+  border: 3px solid indianred;
+}
