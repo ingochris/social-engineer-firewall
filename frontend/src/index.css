@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: sans-serif; */
+  
+  background-color: #EEEEEE;
+  
+}
+
+.head-section {
+  margin-top: 30px;
+}
+
+.jumbotron {
+  margin: 0 auto;
+  width: 500px;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: #64B5F6;
+}
+
+.text-line {
+  /* width: 500px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card {
+  /* background-color: none; */
+}
