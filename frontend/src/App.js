@@ -2,20 +2,40 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 import logo from './logo.svg';
 import './App.css';
+import _ from 'lodash';
 
 let dataArray = []
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {triggers: [], nextIdx: 0};
+  }
+
+  handleMicClick(event) {
+    this.state.triggers.push({
+      title: "testtitle",
+      time: new Date(),
+      body: "lorem ipsum",
+      id: this.state.nextIdx,
+    });
+    this.setState({
+      triggers: this.state.triggers,
+      nextIdx: this.state.nextIdx + 1,
+    });
+  }
+
   render() {
     return (
       <div className="App">
       
-        < Jumbotron title="S.E.F." subTitle="Social Engineer Firewall"/>
+        <Jumbotron title="S.E.F." subTitle="Social Engineer Firewall" onClick={this.handleMicClick.bind(this)}/>
         
         <div class="container">
-          <TextLine />
-          <TextLine />
-          <TextLine />
+          {_.orderBy(this.state.triggers, 'id')
+            .map(trigger =>
+              <TextLine title={trigger.title} time={trigger.time} body={trigger.body} key={trigger.id} />
+           )}
         </div>
       </div>
     );
@@ -31,9 +51,9 @@ export class TextLine extends React.Component {
             <div class="card">
               <div class="card-block">
                 <br/>
-                <h4 class="card-title">Trigger Type</h4>
-                <h6 class="card-subtitle mb-2 text-muted">{getDate()}</h6>
-                <p class="card-text"><i>Some quick example text to build on the card title and make up the bulk of the card's content.</i></p>
+                <h4 class="card-title">{this.props.title}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{formatDate(this.props.time)}</h6>
+                <p class="card-text"><i>{this.props.body}</i></p>
                 <br/>              
               </div>
             </div>
@@ -53,7 +73,7 @@ export class Jumbotron extends React.Component {
             <div class="jumbotron">
               <h1>{this.props.title}</h1>
               <p>{this.props.subTitle}</p>
-              <p><a class="btn btn-primary btn-lg" href="#" role="button" onClick={test}><i class="fas fa-microphone"></i></a></p>    
+              <p><a class="btn btn-primary btn-lg" href="" role="button" onClick={this.props.onClick}><i class="fas fa-microphone"></i></a></p>    
             </div>  
           </div>
         </div>
@@ -67,8 +87,8 @@ function test() {
   ReactDOM.render(<h1>test</h1>, document.getElementById("root"))
 }
 
-function getDate() {
-  var date = new Date().toString().split(" ");
+function formatDate(date) {
+  var date = date.toString().split(" ");
   var shortDate = "";
 
   for(var i = 0; i < 5; i++) {
