@@ -73,7 +73,7 @@ export class Jumbotron extends React.Component {
             <div class="jumbotron">
               <h1>{this.props.title}</h1>
               <p>{this.props.subTitle}</p>
-              <p><a class="btn btn-primary btn-lg" href="" role="button" onClick={this.props.onClick}><i class="fas fa-microphone"></i></a></p>    
+              <p><a class="btn btn-primary btn-lg" href="#" role="button" onClick={this.props.onClick}><i class="fas fa-microphone"></i></a></p>    
             </div>  
           </div>
         </div>
