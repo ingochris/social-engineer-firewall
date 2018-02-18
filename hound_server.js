@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, publicFolder)));
 
 //authenticates requests
 app.get('/houndifyAuth', Houndify.HoundifyExpress.createAuthenticationHandler({ 
-  clientId:  config.clientId, 
-  clientKey: config.clientKey
+  clientId:  "ye7rYadOoK_HaLyF22Kn6w==", 
+  clientKey: "-FFk1j5D3GQTJdNcaal_v_glnzF2iRLbGtzxc-JNEfTlxmIV0HvVnqz5ONZ8jmFKBuU3WnmDOl3ZkcUyQ-IxNg=="
 }));
 
 //sends the request to Houndify backend with authentication headers
