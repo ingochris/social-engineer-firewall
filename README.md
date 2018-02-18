@@ -3,6 +3,6 @@
 
 Copyright 2018 The Social-Engineer Firewall (SEF)
 
-Developed by: Christopher Ngo, Jennifer Zou, Kyle O'brien, and Omri Gabay. 
+Written by Christopher Ngo, Jennifer Zou, Kyle O'brien, and Omri Gabay. 
 
-Founded at Treehacks 2018, Stanford University.
+Founded Treehacks 2018, Stanford University.
