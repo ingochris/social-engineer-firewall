@@ -1,7 +1,13 @@
+body {
+  background-color: #2196F3;
+}
+
 .jumbotron {
-    color: white;
-    background-color: #2196F3;
+    color: black;
+    background-color: white;
     padding: 50px;
+    text-align: center;
+    font-size: 36px;
 }
 
 /* .result {
