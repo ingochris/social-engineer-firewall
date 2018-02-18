@@ -4,18 +4,24 @@
     <script src="houndify.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" typle="text/css" href="index.css">
+    <script src="index.js"></script>
+    <script
+        src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+</head>
 
   <body>
 
         <div class="jumbotron">
-                <h1>Hello, world!</h1>
-                <p>...</p>
-                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-              </div>
+            <div class="page-header">
+                <h1>SEF :: <small>Social Engineering Firewall</small></h1>
+            </div>
+        </div>
 
     <div class="ui center aligned basic segment container">
-      <h2 class="ui block basic header">The SEF</h2>
+
       <form id="form" class="ui form" action="javascript:void(0);">
 
         <div class="ui action big labeled fluid input field">
@@ -30,18 +36,22 @@
 
       
         <div id="status" class="ui info message">   
-          Click on microphone icon or type in the text query.
+          Click on microphone.
         </div>
 
-        <div class="ui field" hidden>
+        <div class="ui field result" hidden>
           <label>Response object</label>
           <textarea id="responseJSON"></textarea>
         </div>
-        <div class="ui field" hidden>
+        <div class="ui field result" hidden>
           <label>Search info object</label>
           <textarea id="infoJSON"></textarea>
         </div>
       </form>
+
+        <br>
+      <hr>
+
     </div>
 
     <script> 
@@ -196,12 +206,14 @@
           return;
         }
 
+        
+
         recorder.start();
 
-        statusElt.innerText = "Streaming voice request...";
-        document.getElementById("voiceIcon").className = "loading circle notched icon big";
-        document.getElementById("textSearchButton").disabled = true;
-        document.getElementById("query").readOnly = true;  
+        // statusElt.innerText = "Streaming voice request...";
+        // document.getElementById("voiceIcon").className = "loading circle notched icon big";
+        // document.getElementById("textSearchButton").disabled = true;
+        // document.getElementById("query").readOnly = true;  
       }
 
       function onFileUpload() {
