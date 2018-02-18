@@ -62,7 +62,7 @@
       var statusElt = document.getElementById("status");
       var transcriptElt = document.getElementById("query");
 
-      var clientID = "ye7rYadOoK_HaLyF22Kn6w==";
+      var clientID = "WeQbJLyzSWajOPjaon25VQ==";
       var conversationState = null;
       var voiceRequest = null;
 
@@ -107,11 +107,11 @@
           query: queryString,
 
           //Your Houndify Client ID
-          clientId: "ye7rYadOoK_HaLyF22Kn6w==", 
+          clientId: "WeQbJLyzSWajOPjaon25VQ==", 
 
           //For testing environment you might want to authenticate on frontend without Node.js server. 
           //In that case you may pass in your Houndify Client Key instead of "authURL".
-          clientKey: "-FFk1j5D3GQTJdNcaal_v_glnzF2iRLbGtzxc-JNEfTlxmIV0HvVnqz5ONZ8jmFKBuU3WnmDOl3ZkcUyQ-IxNg==",
+          clientKey: "OJWLJNncmPwnMSZMk0okzNaNvXiBsas8Oueuz9Wq36Mdg3RsmYSL1XBChTwA-szKK3Yw-4re-akTHbUSgsxpvA==",
 
           //Otherwise you need to create an endpoint on your server
           //for handling the authentication.
@@ -155,11 +155,11 @@
         
         var voiceRequest = new Houndify.VoiceRequest({
           //Your Houndify Client ID
-          clientId: "ye7rYadOoK_HaLyF22Kn6w==",
+          clientId: "WeQbJLyzSWajOPjaon25VQ==",
 
           //For testing environment you might want to authenticate on frontend without Node.js server. 
           //In that case you may pass in your Houndify Client Key instead of "authURL".
-          clientKey: "-FFk1j5D3GQTJdNcaal_v_glnzF2iRLbGtzxc-JNEfTlxmIV0HvVnqz5ONZ8jmFKBuU3WnmDOl3ZkcUyQ-IxNg==",
+          clientKey: "OJWLJNncmPwnMSZMk0okzNaNvXiBsas8Oueuz9Wq36Mdg3RsmYSL1XBChTwA-szKK3Yw-4re-akTHbUSgsxpvA==",
 
           //Otherwise you need to create an endpoint on your server
           //for handling the authentication.
@@ -252,7 +252,7 @@
           //This example takes the default one from the first result.
           conversationState = response.AllResults[0].ConversationState;
         }
-        var url = "http://localhost:3446/responseGetter";
+        /*var url = "http://localhost:3446/responseGetter";
         var params = response;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url, true);
@@ -260,13 +260,14 @@
         //Send the proper header information along with the request
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         console.log(params);
-        xhr.send(JSON.stringify(params));
+        xhr.send(JSON.stringify(params));*/
 
         statusElt.innerText = "Received response.";
         responseElt.parentNode.hidden = false;
         responseElt.value = response.stringify(undefined, 2);
         infoElt.parentNode.hidden = false;
         infoElt.value = JSON.stringify(info, undefined, 2);
+        checkText();
         //await sleep(1000);
         //onMicrophoneClick();
       }
