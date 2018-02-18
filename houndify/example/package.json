@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "body-parser": "1.16.0",
+    "express": "4.13.3",
+    "houndify": "file:houndify-2.1.0.tgz",
+    "minimist": "1.2.0",
+    "wav": "1.0.0"
+  }
+}
