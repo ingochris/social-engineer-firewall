@@ -7,7 +7,7 @@ Written by Christopher Ngo, Jennifer Zou, Kyle O'Brien, and Omri Gabay.
 
 Founded Treehacks 2018, Stanford University.
 
-## Inspiration
+## F.U.D.
 
 No matter how secure your code is, the biggest cybersecurity vulnerability is the human vector. It takes very little to exploit an end-user with social engineering, yet the consequences are severe. 
 
