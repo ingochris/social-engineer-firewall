@@ -24,7 +24,20 @@ The Social-Engineer Firewall (SEF) aims to protect us from these threats. Upon a
 SEF is a Web Application written in React-Native deployed on Microsoft Azure with node.js. iOS and Android app versions are powered by Expo. Real-time audio monitoring is powered by the Houndify SDK API.
 
 ## Todo List
-* Complete development of TensorFlow model of attack signature database
-* Localize NLP
+* Complete development of classification model for attack signature database recognition*
+* Localize NLP**
 * Amazon Alexa prototype
 * IOT planning and prototyping
+
+### \*ML Implementation - This is a statistical binary classification problem, so try:
+* Decision trees
+* Random forests
+* Bayesian networks
+* Support vector machines
+* Neural networks
+* Logistic regression
+
+### \*\*NLP Implementation - To be localized and FLOSS, current candidates:
+* Mozilla Deepspeech (Tensorflow[py] based)(Language Model: KenLM)(Mozilla Public License 2.0)
+* Facebook AI Research Automatic Speech Recognition Toolkit (wav2letter)(LUA based)(Language Model: KenLM)(BSD Licensed)
+* Kaldi Speech Recognition Toolkit (C++)(Apache 2.0 License)
