@@ -29,7 +29,7 @@ SEF is a Web Application written in React-Native deployed on Microsoft Azure wit
 * Amazon Alexa prototype
 * IOT planning and prototyping
 
-### \*ML Implementation - This is a statistical binary classification problem, so try:
+### \*ML Implementation - Solving a statistical binary classification problem, candidates:
 * Decision trees
 * Random forests
 * Bayesian networks
@@ -37,7 +37,7 @@ SEF is a Web Application written in React-Native deployed on Microsoft Azure wit
 * Neural networks
 * Logistic regression
 
-### \*\*NLP Implementation - To be localized and FLOSS, current candidates:
+### \*\*NLP Implementation - To be localized and FLOSS, candidates:
 * Mozilla Deepspeech (Tensorflow[py] based)(Language Model: KenLM)(Mozilla Public License 2.0)
 * Facebook AI Research Automatic Speech Recognition Toolkit (wav2letter)(LUA based)(Language Model: KenLM)(BSD Licensed)
 * Kaldi Speech Recognition Toolkit (C++)(Apache 2.0 License)
