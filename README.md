@@ -1,5 +1,5 @@
 ![img](https://raw.githubusercontent.com/ingochris/treehacks2018/master/frontend/src/logo.png)
-<h1>The Social-Engineer Firewall (SEF)<a href="https://travis-ci.org/fikovnik/ShiftIt"><img src="https://travis-ci.org/fikovnik/ShiftIt.svg" valign="middle" alt="Build Status"/></a></h1>
+<h1>The Social-Engineer Firewall (SEF) <a href="https://travis-ci.org/ingochris/social-engineer-firewall"><img src="https://travis-ci.org/ingochris/social-engineer-firewall.svg" valign="middle" alt="Build Status"/></a></h1>
 
 Copyright 2018 The Social-Engineer Firewall (SEF)
 
@@ -24,8 +24,7 @@ The Social-Engineer Firewall (SEF) aims to protect us from these threats. Upon a
 SEF is a Web Application written in React-Native deployed on Microsoft Azure with node.js. iOS and Android app versions are powered by Expo. Real-time audio monitoring is powered by the Houndify SDK API.
 
 ## Todo List
-Complete development of TensorFlow model 
-
-## Development challenges
-Our lack of experience with new technologies provided us with many learning opportunities.
-
+* Complete development of TensorFlow model of attack signature database
+* Localize NLP
+* Amazon Alexa prototype
+* IOT planning and prototyping
